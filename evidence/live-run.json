@@ -1,0 +1,36 @@
+{
+  "id": "LIVE-LOCK-1791735849",
+  "contract": "0xAB1E0D3E748ac32e83a25b07A98EbfFBb78Cb55C",
+  "transactions": {
+    "publish": "0x5cb3ea246d8f1e0983740f62d3df1ba19a198eb50513eeb81768e297cb1abc25",
+    "request": "0x81c84df83ed5b260633bb256b0dca78555729c09365e2503fbb1e915806f0da0",
+    "adjudicate": "0x7b852796b1e4cd619bbd74d41093b77bbc34691ddfa36fc8afb3391e206b3768"
+  },
+  "final": {
+    "allowed": [
+      "Aggregate accessibility themes",
+      "Quote de-identified excerpts"
+    ],
+    "asset": "Research interview archive",
+    "forbidden": [
+      "Advertising profiles",
+      "Identity re-identification"
+    ],
+    "grant": "GRANTED",
+    "id": "LIVE-LOCK-1791735849",
+    "purpose": "Permit analysis only for the published accessibility study and no unrelated profiling.",
+    "recipient": "0xc8e8f5B7d61Da6eD160f474592627D65728b516e",
+    "request": [
+      "Aggregate accessibility themes"
+    ],
+    "state": "DECIDED",
+    "steward": "0xad9c2fEc8a74efa02364A780BAd1936e255C3C25",
+    "verdicts": [
+      {
+        "index": 0,
+        "operation": "Aggregate accessibility themes",
+        "status": "ALLOWED"
+      }
+    ]
+  }
+}

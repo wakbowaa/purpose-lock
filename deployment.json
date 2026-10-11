@@ -1,0 +1,9 @@
+{
+  "network": "StudioNet",
+  "contractAddress": "0xAB1E0D3E748ac32e83a25b07A98EbfFBb78Cb55C",
+  "deploymentTransaction": "0x6c478879f6b531751127684b95bb0cadd247313d953214876afe19e2dc08cb21",
+  "sourceSha256": "81a0bd285c43d2a2ffbb50f65c462f54478c0828c729face4a15d28b2679edd1",
+  "sourceCommit": "bfa20f31cca0f0598f3bcd9aae2c996320ef4b60",
+  "repository": "https://github.com/wakbowaa/purpose-lock",
+  "publicSite": "https://purpose-lock.pages.dev/"
+}
