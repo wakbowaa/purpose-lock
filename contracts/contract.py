@@ -44,11 +44,13 @@ class PurposeLock(gl.Contract):
   if k not in self.locks:raise gl.vm.UserError("[EXPECTED] lock not found")
   return k,self.locks[k]
  @gl.public.write
- def publish(self,lock_id:str,recipient:Address,asset:str,purpose:str,allowed_json:str,forbidden_json:str)->None:
+ def publish(self,lock_id:str,recipient:str,asset:str,purpose:str,allowed_json:str,forbidden_json:str)->None:
+  try:party=Address(recipient)
+  except:raise gl.vm.UserError("[EXPECTED] valid recipient address required")
   k=key(lock_id);a=clean(asset,160);p=clean(purpose,900);allowed=arr(allowed_json,1,8,"allowed uses");forbidden=arr(forbidden_json,1,8,"forbidden uses")
   if k in self.locks:raise gl.vm.UserError("[EXPECTED] duplicate lock id")
-  if recipient==gl.message.sender_address or len(a)<5 or len(p)<20:raise gl.vm.UserError("[EXPECTED] distinct recipient and meaningful charter required")
-  self.locks[k]=Lock(gl.message.sender_address,recipient,a,p,json.dumps(allowed),json.dumps(forbidden),"[]","CHARTERED","[]","")
+  if party==gl.message.sender_address or len(a)<5 or len(p)<20:raise gl.vm.UserError("[EXPECTED] distinct recipient and meaningful charter required")
+  self.locks[k]=Lock(gl.message.sender_address,party,a,p,json.dumps(allowed),json.dumps(forbidden),"[]","CHARTERED","[]","")
  @gl.public.write
  def request(self,lock_id:str,operations_json:str)->None:
   k,x=self._get(lock_id)
